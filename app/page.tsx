@@ -149,8 +149,22 @@ function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 
-function Section({ id, title, subtitle, children }) {
+function Section({
+  id,
+  title,
+  subtitle,
+  children,
+}: {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  children: React.ReactNode;
+}) {
   return (
+    ...
+  );
+}
+
     <section id={id} className="scroll-mt-24 py-14">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-8">
