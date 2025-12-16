@@ -93,7 +93,7 @@ const PROGRAMS = [
       { label: "1:3", duration: "2시간", price: "[가격 수정]" },
     ],
   },
-];
+] as const;
 
 const INSTRUCTORS = [
   {
@@ -179,7 +179,13 @@ function Section({
   );
 }
 
-function PriceTable({ rows }) {
+type PriceRow = {
+  label: string;
+  duration?: string;
+  price: string;
+};
+
+function PriceTable({ rows }: { rows: readonly PriceRow[] }) {
   return (
     <div className="overflow-hidden rounded-2xl border">
       <table className="w-full text-sm">
@@ -204,7 +210,13 @@ function PriceTable({ rows }) {
   );
 }
 
-function Pill({ icon: Icon, title, desc }) {
+type PillProps = {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  desc: string;
+};
+
+function Pill({ icon: Icon, title, desc }: PillProps) {
   return (
     <Card className="rounded-2xl">
       <CardContent className="p-5">
@@ -227,7 +239,8 @@ function Pill({ icon: Icon, title, desc }) {
 // ----------------------
 export default function App() {
   const [openBooking, setOpenBooking] = useState(false);
-  const [bookingPreset, setBookingPreset] = useState({ programId: "ski" });
+  const [bookingPreset, setBookingPreset] = useState<BookingPreset | undefined>(undefined);
+
 
   const nav = useMemo(
     () => [
@@ -740,7 +753,17 @@ export default function App() {
   );
 }
 
-function BookingDialog({ open, onOpenChange, preset }) {
+type BookingPreset = {
+  programId?: "ski" | "board";
+};
+
+type BookingDialogProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  preset?: BookingPreset;
+};
+
+function BookingDialog({ open, onOpenChange, preset }: BookingDialogProps) {
   const [programId, setProgramId] = useState(preset?.programId || "ski");
   const [lessonType, setLessonType] = useState("1:1");
   const [date, setDate] = useState("");
@@ -764,7 +787,7 @@ function BookingDialog({ open, onOpenChange, preset }) {
 
   const canSubmit = name.trim() && phone.trim() && date.trim() && time.trim();
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!canSubmit) return;
 
@@ -866,7 +889,11 @@ function BookingDialog({ open, onOpenChange, preset }) {
             >
               <div className="space-y-2">
                 <div className="text-sm font-semibold">프로그램</div>
-                <Select value={programId} onValueChange={setProgramId}>
+                <Select
+                  value={programId}
+                  onValueChange={(v) => setProgramId(v as "ski" | "board")}
+                >
+
                   <SelectTrigger className="rounded-2xl">
                     <SelectValue placeholder="선택" />
                   </SelectTrigger>
