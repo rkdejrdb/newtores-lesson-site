@@ -161,10 +161,6 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    ...
-  );
-}
-
     <section id={id} className="scroll-mt-24 py-14">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-8">
