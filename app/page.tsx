@@ -144,9 +144,10 @@ const FAQS = [
 // ----------------------
 // Helpers
 // ----------------------
-function cn(...classes) {
+function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
+
 
 function Section({ id, title, subtitle, children }) {
   return (
