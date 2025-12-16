@@ -842,7 +842,7 @@ function BookingDialog({ open, onOpenChange, preset }: BookingDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[720px] rounded-2xl">
+      <DialogContent className="rounded-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-xl font-extrabold">바로 예약</DialogTitle>
           <DialogDescription>
