@@ -104,8 +104,8 @@ const INSTRUCTORS = [
   {
     name: "강사 A",
     role: "스키/보드 코치",
-    tags: ["초보 전문", "자세교정"],
-    bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
+    tags: ["중급", "턴 교정"],
+    // bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습.jpeg",
   },
@@ -113,14 +113,14 @@ const INSTRUCTORS = [
     name: "강사 B",
     role: "키즈/패밀리 코치",
     tags: ["아이 강습", "안전 중심"],
-    bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
+    // bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습1.jpeg",
   },
   {
     name: "강사 C",
     role: "레벨업 코치",
-    tags: ["중급", "턴 교정"],
+    tags: ["상급", "자세 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습3.jpg",
@@ -128,7 +128,7 @@ const INSTRUCTORS = [
     {
     name: "강사 D",
     role: "스키/보드 코치",
-    tags: ["초보 전문", "자세교정"],
+    tags: ["초보 전문", "자세 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습4.jpg",
@@ -136,7 +136,7 @@ const INSTRUCTORS = [
     {
     name: "강사 E",
     role: "스키/보드 코치",
-    tags: ["초보 전문", "자세교정"],
+    tags: ["초보 전문", "자세 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습5.jpg",
@@ -144,7 +144,7 @@ const INSTRUCTORS = [
     {
     name: "강사 F",
     role: "스키/보드 코치",
-    tags: ["초보 전문", "자세교정"],
+    tags: ["초보 전문", "자세 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습6.jpg",
@@ -285,7 +285,7 @@ export default function App() {
 
 
 
-const HERO_IMAGES = ["/hero/스키강습.jpeg", "/hero/스키강습1.jpeg", "/hero/스키강습3.jpg"];
+const HERO_IMAGES = ["/hero/스키강습8.jpg", "/hero/스키강습1.jpeg", "/hero/스키강습6.jpg"];
 
 const [heroIdx, setHeroIdx] = useState(0);
 
