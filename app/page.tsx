@@ -45,7 +45,7 @@ import { CalendarDays, Phone, MapPin, ShieldCheck, Video, Star, Clock, Users, Sp
 import Image from "next/image";
 
 <Image
-  src="/icon.png"
+  src="public/icon.png"
   alt="뉴토레스 로고"
   width={24}
   height={24}
