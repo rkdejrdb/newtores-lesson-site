@@ -12,9 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "오크밸리 스키/보드 강습센터",
-  description: "오크밸리 스키/보드 강습 예약 문의(카카오톡)",
+export const metadata = {
+  title: "오크밸리 스키·보드 강습 | 뉴토레스",
+  description: "오크밸리 스키·보드 강습 전문 뉴토레스 강습센터",
+  verification: {
+    naver: "1b74ef51c408397002da1d543aaadc642941c08c",
+  },
 };
 
 export default function RootLayout({
