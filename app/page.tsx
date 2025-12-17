@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -88,9 +89,9 @@ const PROGRAMS = [
       "개인 페이스에 맞춘 코칭",
     ],
     pricing: [
-      { label: "1:1", duration: "2시간", price: "[가격 수정]" },
-      { label: "1:2", duration: "2시간", price: "[가격 수정]" },
-      { label: "1:3", duration: "2시간", price: "[가격 수정]" },
+      { label: "1:1", duration: "2시간", price: "150,000원" },
+      { label: "1:2", duration: "2시간", price: "180,000원" },
+      { label: "1:3", duration: "2시간", price: "210,000원" },
     ],
   },
 ] as const;
@@ -254,6 +255,20 @@ export default function App() {
     []
   );
 
+
+
+const HERO_IMAGES = ["/hero/스키강습.jpg", "/hero/스키강습1.jpg", "/hero/스키강습3.jpg"];
+
+const [heroIdx, setHeroIdx] = useState(0);
+
+useEffect(() => {
+  const t = setInterval(() => {
+    setHeroIdx((i) => (i + 1) % HERO_IMAGES.length);
+  }, 3500); // 3.5초마다 변경 (원하는 값으로)
+  return () => clearInterval(t);
+}, []);
+
+
   const heroBg = BRAND.heroImages?.[0];
 
   return (
@@ -307,16 +322,14 @@ export default function App() {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${heroBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "saturate(0.95)",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/45" />
+ {/* 배경 1 */}
+  <div
+    className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+    style={{ backgroundImage: `url(${HERO_IMAGES[heroIdx]})` }}
+  />
+
+  {/* 어둡게 오버레이(가독성) */}
+  <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
           <motion.div
@@ -435,7 +448,7 @@ export default function App() {
       <Section
         id="instructors"
         title="강사진"
-        subtitle="강사진 정보(경력/자격/전문 분야)를 입력하면 신뢰도가 크게 올라갑니다."
+        subtitle="강사진 정보(경력/자격/전문 분야)"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {INSTRUCTORS.map((ins) => (
@@ -472,7 +485,7 @@ export default function App() {
       </Section>
 
       {/* Pricing */}
-      <Section id="pricing" title="요금" subtitle="가격/시간은 스마트스토어 상품과 동일하게 맞추는 것을 추천합니다.">
+      <Section id="pricing" title="요금" subtitle="1:1, 1:2, 1:3 금액은 1명당 금액이 아닌 총 금액입니다.">
         <Tabs defaultValue="ski" className="w-full">
           <TabsList className="rounded-2xl">
             <TabsTrigger value="ski" className="rounded-2xl">스키</TabsTrigger>
@@ -611,7 +624,7 @@ export default function App() {
       </Section>
 
       {/* Contact */}
-      <Section id="contact" title="오시는 길" subtitle="지도/길찾기 링크를 넣으면 문의가 줄고 방문 전환이 좋아집니다.">
+      <Section id="contact" title="오시는 길">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Card className="rounded-2xl">
             <CardHeader>
@@ -668,7 +681,7 @@ export default function App() {
               <div className="flex items-start gap-2">
                 <Clock className="h-4 w-4 mt-1" />
                 <div>
-                  <div className="font-semibold text-foreground">[운영 시간 입력]</div>
+                  <div className="font-semibold text-foreground">08:00 - 24:00</div>
                   <div className="text-xs">리조트 운영/시즌 일정에 따라 변동될 수 있습니다.</div>
                 </div>
               </div>
@@ -677,7 +690,7 @@ export default function App() {
                 <div>
                   <div className="font-semibold text-foreground">안전 & 환불</div>
                   <div className="text-xs">
-                    [노쇼/우천/강풍/환불 규정 요약을 입력하세요]
+                    [노쇼/우천/강풍/환불 규정]
                   </div>
                 </div>
               </div>
