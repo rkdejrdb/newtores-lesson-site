@@ -42,6 +42,10 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { CalendarDays, Phone, MapPin, ShieldCheck, Video, Star, Clock, Users, Sparkles, MessageCircle } from "lucide-react";
 
+
+const KAKAO_URL =
+  "https://open.kakao.com/o/srH5zE3f?message=오크밸리%20스키%2F보드%20강습%20문의드립니다";
+
 // ----------------------
 // ✅ EDIT HERE (store/center info)
 // ----------------------
@@ -103,7 +107,7 @@ const INSTRUCTORS = [
     tags: ["초보 전문", "자세교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강사.jpeg",
+      "/hero/스키강습.jpeg",
   },
   {
     name: "강사 B",
@@ -111,7 +115,7 @@ const INSTRUCTORS = [
     tags: ["아이 강습", "안전 중심"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강사.jpeg",
+      "/hero/스키강습1.jpeg",
   },
   {
     name: "강사 C",
@@ -119,7 +123,31 @@ const INSTRUCTORS = [
     tags: ["중급", "턴 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강사.jpeg",
+      "/hero/스키강슴3.jpeg",
+  },
+    {
+    name: "강사 D",
+    role: "스키/보드 코치",
+    tags: ["초보 전문", "자세교정"],
+    bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
+    photo:
+      "/hero/스키강습4.jpeg",
+  },
+    {
+    name: "강사 E",
+    role: "스키/보드 코치",
+    tags: ["초보 전문", "자세교정"],
+    bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
+    photo:
+      "/hero/스키강습5.jpeg",
+  },
+    {
+    name: "강사 F",
+    role: "스키/보드 코치",
+    tags: ["초보 전문", "자세교정"],
+    bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
+    photo:
+      "/hero/스키강습6.jpeg",
   },
 ];
 
@@ -311,7 +339,7 @@ useEffect(() => {
               className="rounded-2xl"
               onClick={() => {
                 setBookingPreset({ programId: "ski" });
-                setOpenBooking(true);
+                window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
               }}
             >
               바로 예약
@@ -358,7 +386,8 @@ useEffect(() => {
                 size="lg"
                 onClick={() => {
                   setBookingPreset({ programId: "ski" });
-                  setOpenBooking(true);
+                  window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                 }}
               >
                 스키 강습 예약
@@ -369,7 +398,8 @@ useEffect(() => {
                 variant="secondary"
                 onClick={() => {
                   setBookingPreset({ programId: "board" });
-                  setOpenBooking(true);
+                  window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                 }}
               >
                 보드 강습 예약
@@ -432,7 +462,8 @@ useEffect(() => {
                     className="rounded-2xl w-full"
                     onClick={() => {
                       setBookingPreset({ programId: p.id });
-                      setOpenBooking(true);
+                      window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                     }}
                   >
                     {p.title} 예약하기
@@ -512,7 +543,8 @@ useEffect(() => {
                       className="rounded-2xl w-full mt-5"
                       onClick={() => {
                         setBookingPreset({ programId: p.id });
-                        setOpenBooking(true);
+                        window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                       }}
                     >
                       {p.title} 바로 예약
@@ -545,7 +577,8 @@ useEffect(() => {
                   className="rounded-2xl"
                   onClick={() => {
                     setBookingPreset({ programId: "ski" });
-                    setOpenBooking(true);
+                    window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                   }}
                 >
                   스키 예약
@@ -555,7 +588,8 @@ useEffect(() => {
                   variant="secondary"
                   onClick={() => {
                     setBookingPreset({ programId: "board" });
-                    setOpenBooking(true);
+                    window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                   }}
                 >
                   보드 예약
@@ -664,7 +698,8 @@ useEffect(() => {
                   variant="secondary"
                   onClick={() => {
                     setBookingPreset({ programId: "ski" });
-                    setOpenBooking(true);
+                    window.open("https://open.kakao.com/o/srH5zE3f", "_blank");
+
                   }}
                 >
                   예약 폼 열기
@@ -690,7 +725,7 @@ useEffect(() => {
                 <div>
                   <div className="font-semibold text-foreground">안전 & 환불</div>
                   <div className="text-xs">
-                    [리조트 운영 상황과 안전을 최우선으로 하며, 불가 시 일정 변경/환불 기준에 따라 안내드립니다.]
+                  리조트 운영 상황과 안전을 최우선으로 하며, 불가 시 일정 변경/환불 기준에 따라 안내드립니다.
                   </div>
                 </div>
               </div>
@@ -855,163 +890,44 @@ function BookingDialog({ open, onOpenChange, preset }: BookingDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="rounded-2xl max-h-[85vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-extrabold">바로 예약</DialogTitle>
-          <DialogDescription>
-            아래 정보를 남겨주시면 확인 후 확정 안내드립니다.
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="rounded-2xl max-w-md">
+  <DialogHeader>
+    <DialogTitle className="text-xl font-extrabold">
+      강습 예약 문의
+    </DialogTitle>
+    <DialogDescription>
+      강습 예약 및 상담은 카카오톡으로만 진행됩니다.
+      아래 버튼을 눌러 바로 문의해주세요.
+    </DialogDescription>
+  </DialogHeader>
 
-        <AnimatePresence mode="wait">
-          {done ? (
-            <motion.div
-              key="done"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              className="rounded-2xl border p-5"
-            >
-              <div className="font-extrabold">접수 완료(메일 작성 화면이 열립니다)</div>
-              <p className="text-sm text-muted-foreground mt-2">
-                메일 전송이 어려우면 {BRAND.phone}로 전화/문자 주셔도 됩니다.
-              </p>
-              <div className="mt-4 flex gap-2">
-                <Button className="rounded-2xl" onClick={() => onOpenChange(false)}>
-                  닫기
-                </Button>
-                <Button
-                  className="rounded-2xl"
-                  variant="secondary"
-                  onClick={() => {
-                    setDone(false);
-                  }}
-                >
-                  다른 예약 작성
-                </Button>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.form
-              key="form"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              onSubmit={handleSubmit}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
-            >
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">프로그램</div>
-                <Select
-                  value={programId}
-                  onValueChange={(v) => setProgramId(v as "ski" | "board")}
-                >
+  <div className="mt-6 space-y-4">
+    <div className="rounded-xl border p-4 text-sm text-muted-foreground leading-relaxed">
+      • 강습 일정 / 시간 상담<br />
+      • 스키 · 보드 선택<br />
+      • 레벨 / 인원 / 렌탈 여부<br />
+      👉 카톡 상담이 가장 빠릅니다
+    </div>
 
-                  <SelectTrigger className="rounded-2xl">
-                    <SelectValue placeholder="선택" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="ski">스키</SelectItem>
-                    <SelectItem value="board">보드</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+    <a
+      href="https://open.kakao.com/o/srH5zE3f"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block"
+    >
+      <Button
+        className="w-full rounded-2xl text-base font-bold bg-yellow-400 text-black hover:bg-yellow-300"
+      >
+        카카오톡으로 강습 문의하기
+      </Button>
+    </a>
 
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">강습 형태</div>
-                <Select value={lessonType} onValueChange={setLessonType}>
-                  <SelectTrigger className="rounded-2xl">
-                    <SelectValue placeholder="선택" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1:1">1:1</SelectItem>
-                    <SelectItem value="1:2">1:2</SelectItem>
-                    <SelectItem value="1:3">1:3</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+    <div className="text-xs text-center text-muted-foreground">
+      상담 가능 시간 : 08:00 ~ 24:00
+    </div>
+  </div>
+</DialogContent>
 
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">희망 날짜</div>
-                <Input
-                  className="rounded-2xl"
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">희망 시간</div>
-                <Input
-                  className="rounded-2xl"
-                  type="time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">예약자명</div>
-                <Input
-                  className="rounded-2xl"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="예: 홍길동"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">연락처</div>
-                <Input
-                  className="rounded-2xl"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="예: 010-1234-5678"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">레벨</div>
-                <Select value={level} onValueChange={setLevel}>
-                  <SelectTrigger className="rounded-2xl">
-                    <SelectValue placeholder="선택" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="초보">초보</SelectItem>
-                    <SelectItem value="초급">초급</SelectItem>
-                    <SelectItem value="중급">중급</SelectItem>
-                    <SelectItem value="상급">상급</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-sm font-semibold">추가 요청사항</div>
-                <Textarea
-                  className="rounded-2xl min-h-[88px]"
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  placeholder="예: 아이 9세/키 135, 렌탈 필요(의류/장비), 사진/영상 요청"
-                />
-              </div>
-
-              <div className="md:col-span-2 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between pt-2">
-                <div className="text-xs text-muted-foreground">
-                  * 기본은 메일 접수(가장 빠름). 자동 확정형으로 바꾸려면 Apps Script 연동을 붙이면 됩니다.
-                </div>
-                <Button
-                  type="submit"
-                  className="rounded-2xl"
-                  disabled={!canSubmit || submitting}
-                >
-                  {submitting ? "전송 중..." : "예약 요청 보내기"}
-                </Button>
-              </div>
-            </motion.form>
-          )}
-        </AnimatePresence>
-      </DialogContent>
     </Dialog>
   );
 }
