@@ -44,12 +44,6 @@ import { CalendarDays, Phone, MapPin, ShieldCheck, Video, Star, Clock, Users, Sp
 
 import Image from "next/image";
 
-<Image
-  src="public/icon.png"
-  alt="뉴토레스 로고"
-  width={24}
-  height={24}
-/>
 const KAKAO_URL =
   "https://open.kakao.com/o/srH5zE3f?message=오크밸리%20스키%2F보드%20강습%20문의드립니다";
 
@@ -83,7 +77,7 @@ const PROGRAMS = [
     badges: ["초보환영", "안전중심", "사진/영상 제공"],
     highlights: [
       "기초부터 자세교정까지 레벨별 맞춤",
-      "강습 중 사진/영상 촬영 후 전송(옵션)",
+      "강습 중 사진/영상 촬영 후 전송",
       "현장 상황에 따라 코스/동선 최적화",
     ],
     pricing: [
@@ -114,7 +108,7 @@ const INSTRUCTORS = [
   {
     name: "강사 A",
     role: "스키/보드 코치",
-    tags: ["중급", "턴 교정"],
+    tags: ["상급", "턴 교정"],
     bio: "대표 강사",
     photo:
       "/hero/스키강습.jpeg",
@@ -122,7 +116,7 @@ const INSTRUCTORS = [
   {
     name: "강사 B",
     role: "키즈/패밀리 코치",
-    tags: ["아이 강습", "안전 중심"],
+    tags: ["중급", "안전 중심"],
     // bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습6.jpg",
@@ -130,7 +124,7 @@ const INSTRUCTORS = [
   {
     name: "강사 C",
     role: "레벨업 코치",
-    tags: ["상급", "자세 교정"],
+    tags: ["중급", "자세 교정"],
    // bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
       "/hero/스키강습7.jpg",
@@ -164,7 +158,7 @@ const INSTRUCTORS = [
 const FAQS = [
   {
     q: "장비/의류가 없어도 강습 가능한가요?",
-    a: "네. 현장 렌탈(장비/의류/보호장구)과 함께 이용 가능합니다. 예약 시 희망 사이즈를 남겨주시면 준비가 더 빠릅니다.",
+    a: "네. 현장 렌탈(장비/의류/보호장구)과 함께 이용 가능합니다. 예약시 렌탈 내용을 남겨주시면 준비가 더 빠릅니다.",
   },
   {
     q: "초보인데 2시간으로 충분할까요?",
@@ -176,7 +170,7 @@ const FAQS = [
   },
   {
     q: "사진/영상은 꼭 제공되나요?",
-    a: "기본 제공/옵션 제공 여부를 상품 구성에 맞춰 설정할 수 있습니다. 원하시면 당일 요청도 가능합니다.",
+    a: "사진/영상은 강사님께서 피드백과 함께 전달 드립니다. 원하시면 당일 요청도 가능합니다.",
   },
 ];
 
@@ -318,8 +312,14 @@ useEffect(() => {
       <header className="sticky top-0 z-50 border-b bg-background/75 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-2xl border flex items-center justify-center">
-              <Sparkles className="h-4 w-4" />
+<div className="h-9 w-9 rounded-2xl border flex items-center justify-center overflow-hidden">
+                <Image
+    src="/icon.png"
+    alt="뉴토레스 로고"
+    width={28}
+    height={28}
+    priority
+  />
             </div>
             <div>
               <div className="text-sm font-extrabold leading-tight">{BRAND.name}</div>
@@ -548,8 +548,7 @@ useEffect(() => {
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground">
                     <ul className="list-disc pl-5 space-y-2">
-                      <li>희망 시간대/인원/레벨을 남겨주세요.</li>
-                      <li>장비/의류가 필요하면 사이즈도 함께 적어주세요.</li>
+                      <li>희망 날짜/시간대/인원/레벨을 남겨주세요.</li>
                       <li>기상/리조트 운영에 따라 일정이 조정될 수 있습니다.</li>
                     </ul>
                     <Button
