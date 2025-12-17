@@ -690,7 +690,7 @@ useEffect(() => {
                 <div>
                   <div className="font-semibold text-foreground">안전 & 환불</div>
                   <div className="text-xs">
-                    [노쇼/우천/강풍/환불 규정]
+                    [리조트 운영 상황과 안전을 최우선으로 하며, 불가 시 일정 변경/환불 기준에 따라 안내드립니다.]
                   </div>
                 </div>
               </div>
