@@ -70,7 +70,7 @@ const PROGRAMS = [
     id: "ski",
     title: "스키 강습",
     subtitle: "초보·아이·성인 맞춤 레벨업",
-    badges: ["초보환영", "안전중심", "자세교정", "사진/영상 제공"],
+    badges: ["초보환영", "안전중심", "사진/영상 제공"],
     highlights: [
       "기초부터 자세교정까지 레벨별 맞춤",
       "강습 중 사진/영상 촬영 후 전송(옵션)",
@@ -86,7 +86,7 @@ const PROGRAMS = [
     id: "board",
     title: "보드 강습",
     subtitle: "첫 보딩부터 안전하게",
-    badges: ["초보환영", "안전중심", "자세교정", "사진/영상 제공"],
+    badges: ["초보환영", "안전중심", "사진/영상 제공"],
     highlights: [
       "넘어짐·일어남부터 BBP/턴까지 단계별",
       "펜듈럼/비기너턴/카빙 기초",
@@ -123,7 +123,7 @@ const INSTRUCTORS = [
     tags: ["중급", "턴 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강슴3.jpeg",
+      "/hero/스키강슴3.jpg",
   },
     {
     name: "강사 D",
@@ -131,7 +131,7 @@ const INSTRUCTORS = [
     tags: ["초보 전문", "자세교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강습4.jpeg",
+      "/hero/스키강습4.jpg",
   },
     {
     name: "강사 E",
@@ -139,7 +139,7 @@ const INSTRUCTORS = [
     tags: ["초보 전문", "자세교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강습5.jpeg",
+      "/hero/스키강습5.jpg",
   },
     {
     name: "강사 F",
@@ -147,7 +147,7 @@ const INSTRUCTORS = [
     tags: ["초보 전문", "자세교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강습6.jpeg",
+      "/hero/스키강습6.jpg",
   },
 ];
 
@@ -285,7 +285,7 @@ export default function App() {
 
 
 
-const HERO_IMAGES = ["/hero/스키강습.jpg", "/hero/스키강습1.jpg", "/hero/스키강습3.jpg"];
+const HERO_IMAGES = ["/hero/스키강습.jpeg", "/hero/스키강습1.jpeg", "/hero/스키강습3.jpg"];
 
 const [heroIdx, setHeroIdx] = useState(0);
 
@@ -478,7 +478,7 @@ useEffect(() => {
       {/* Instructors */}
       <Section
         id="instructors"
-        title="강사진"
+        title="뉴토레스 강습센터 강사진"
         subtitle="강사진 정보(경력/자격/전문 분야)"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -516,7 +516,7 @@ useEffect(() => {
       </Section>
 
       {/* Pricing */}
-      <Section id="pricing" title="요금" subtitle="1:1, 1:2, 1:3 금액은 1명당 금액이 아닌 총 금액입니다.">
+      <Section id="pricing" title="스키/보드 강습 요금" subtitle="1:1, 1:2, 1:3 금액은 1명당 금액이 아닌 총 금액입니다.">
         <Tabs defaultValue="ski" className="w-full">
           <TabsList className="rounded-2xl">
             <TabsTrigger value="ski" className="rounded-2xl">스키</TabsTrigger>
@@ -616,35 +616,12 @@ useEffect(() => {
             </CardContent>
           </Card>
 
-          <Card className="rounded-2xl">
-            <CardHeader>
-              <CardTitle className="text-base font-extrabold">예약 운영 가이드</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground space-y-3">
-              <p>
-                “바로 예약”을 진짜 자동화하려면 아래 중 하나로 연결하세요.
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <b>가장 쉬움:</b> 폼 제출 → <b>메일 발송</b>(대부분 업체가 이 방식으로 시작)
-                </li>
-                <li>
-                  <b>추천:</b> 구글 Forms/Sheets + Apps Script로 <b>자동 접수</b>(문자/톡톡 연동도 가능)
-                </li>
-                <li>
-                  <b>확장:</b> 네이버 예약/캘린더(예약 슬롯)로 <b>즉시 확정형</b> 운영
-                </li>
-              </ul>
-              <p className="text-xs">
-                ※ 이 페이지는 프런트엔드(웹)입니다. 결제/자동 확정은 연동 방식에 따라 붙입니다.
-              </p>
-            </CardContent>
-          </Card>
+        
         </div>
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" title="자주 묻는 질문" subtitle="초보 고객의 불안을 줄이면 예약 전환율이 올라갑니다.">
+      <Section id="faq" title="자주 묻는 질문" subtitle="추가 질문 사항은 카카오톡 문의 부탁드립니다.">
         <Accordion type="single" collapsible className="w-full">
           {FAQS.map((f, idx) => (
             <AccordionItem key={idx} value={`item-${idx}`}>
@@ -821,7 +798,7 @@ function BookingDialog({ open, onOpenChange, preset }: BookingDialogProps) {
   const [level, setLevel] = useState("초보");
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(false); 
 
   React.useEffect(() => {
     if (open) {
