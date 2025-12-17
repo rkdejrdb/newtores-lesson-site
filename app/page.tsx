@@ -64,6 +64,9 @@ const BRAND = {
   ],
 };
 
+
+
+
 // Pricing templates (edit freely)
 const PROGRAMS = [
   {
@@ -169,6 +172,9 @@ const FAQS = [
     a: "기본 제공/옵션 제공 여부를 상품 구성에 맞춰 설정할 수 있습니다. 원하시면 당일 요청도 가능합니다.",
   },
 ];
+
+
+<meta name="naver-site-verification" content="1b74ef51c408397002da1d543aaadc642941c08c" />
 
 // ----------------------
 // Helpers
