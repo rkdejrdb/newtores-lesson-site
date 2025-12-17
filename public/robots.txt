@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://newtores-lesson-site.vercel.app/sitemap.xml
