@@ -42,7 +42,14 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { CalendarDays, Phone, MapPin, ShieldCheck, Video, Star, Clock, Users, Sparkles, MessageCircle } from "lucide-react";
 
+import Image from "next/image";
 
+<Image
+  src="/icon.png"
+  alt="뉴토레스 로고"
+  width={24}
+  height={24}
+/>
 const KAKAO_URL =
   "https://open.kakao.com/o/srH5zE3f?message=오크밸리%20스키%2F보드%20강습%20문의드립니다";
 
