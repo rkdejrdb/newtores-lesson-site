@@ -123,7 +123,7 @@ const INSTRUCTORS = [
     tags: ["중급", "턴 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "/hero/스키강슴3.jpg",
+      "/hero/스키강습3.jpg",
   },
     {
     name: "강사 D",
@@ -370,14 +370,14 @@ useEffect(() => {
               오크밸리 현장 강습 · 예약형
             </Badge>
             <h1 className="mt-4 text-3xl md:text-5xl font-black tracking-tight text-white">
-              초보도, 아이도
+              초보, 아이, 성인 걱정없이
               <br />
               안전하게 ‘처음부터’
             </h1>
             <p className="mt-4 text-white/85 text-base md:text-lg">
               레벨별 맞춤 코칭으로 부담 없이 시작하세요.
               <br />
-              강습 중 사진/영상 촬영(옵션)으로 기록까지 남겨드립니다.
+              강습 중 사진/영상 촬영으로 피드백 및 기록까지 남겨드립니다.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -407,8 +407,8 @@ useEffect(() => {
             </div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <Pill icon={ShieldCheck} title="안전 중심" desc="초보/키즈 맞춤 진행" />
-              <Pill icon={Video} title="사진·영상" desc="강습 기록 전송(옵션)" />
+              <Pill icon={ShieldCheck} title="안전 중심" desc="초보/키즈/성인 맞춤 진행" />
+              <Pill icon={Video} title="사진·영상" desc="강습 기록 전송" />
               <Pill icon={Clock} title="빠른 시작" desc="예약 후 현장 진행" />
             </div>
           </motion.div>
@@ -561,7 +561,7 @@ useEffect(() => {
       <Section
         id="booking"
         title="예약"
-        subtitle="아래 예약 폼은 ①메일 전송(간단) 또는 ②구글 Apps Script 연동(자동 접수) 중 선택해 바로 사용할 수 있습니다."
+        subtitle="아래 예약 버튼을 누르고 카카오톡으로 문의 바랍니다."
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Card className="rounded-2xl">
@@ -570,7 +570,7 @@ useEffect(() => {
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
               <p>
-                버튼을 눌러 예약 폼을 작성하면, 상담/확정 안내를 드립니다.
+                버튼을 눌러 카카오톡으로 상담/확정 안내 도와드립니다.
               </p>
               <div className="mt-4 flex flex-col sm:flex-row gap-3">
                 <Button
