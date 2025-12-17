@@ -66,7 +66,7 @@ const PROGRAMS = [
     id: "ski",
     title: "스키 강습",
     subtitle: "초보·아이·성인 맞춤 레벨업",
-    badges: ["초보환영", "안전중심", "사진/영상 제공"],
+    badges: ["초보환영", "안전중심", "자세교정", "사진/영상 제공"],
     highlights: [
       "기초부터 자세교정까지 레벨별 맞춤",
       "강습 중 사진/영상 촬영 후 전송(옵션)",
@@ -82,10 +82,10 @@ const PROGRAMS = [
     id: "board",
     title: "보드 강습",
     subtitle: "첫 보딩부터 안전하게",
-    badges: ["초보환영", "자세교정", "영상 제공"],
+    badges: ["초보환영", "안전중심", "자세교정", "사진/영상 제공"],
     highlights: [
       "넘어짐·일어남부터 BBP/턴까지 단계별",
-      "펜들턴/비기너턴/카빙 기초",
+      "펜듈럼/비기너턴/카빙 기초",
       "개인 페이스에 맞춘 코칭",
     ],
     pricing: [
@@ -103,7 +103,7 @@ const INSTRUCTORS = [
     tags: ["초보 전문", "자세교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "https://images.unsplash.com/photo-1520975682071-a32e881fa5b7?auto=format&fit=crop&w=800&q=80",
+      "/hero/스키강사.jpeg",
   },
   {
     name: "강사 B",
@@ -111,7 +111,7 @@ const INSTRUCTORS = [
     tags: ["아이 강습", "안전 중심"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "https://images.unsplash.com/photo-1520975791873-96f89e4e62f4?auto=format&fit=crop&w=800&q=80",
+      "/hero/스키강사.jpeg",
   },
   {
     name: "강사 C",
@@ -119,7 +119,7 @@ const INSTRUCTORS = [
     tags: ["중급", "턴 교정"],
     bio: "[경력/자격/지도 스타일 소개를 입력하세요]",
     photo:
-      "https://images.unsplash.com/photo-1520975958226-2d0b4d63c879?auto=format&fit=crop&w=800&q=80",
+      "/hero/스키강사.jpeg",
   },
 ];
 
