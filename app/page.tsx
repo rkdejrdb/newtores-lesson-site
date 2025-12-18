@@ -487,10 +487,24 @@ useEffect(() => {
           ))}
         </div>
       </Section>
-      
-<a href="/oakvalley-ski-lesson" className="underline text-sm text-muted-foreground">
-  오크밸리 스키 강습 안내 페이지 보기
-</a>
+
+{/* ✅ SEO 안내 페이지 버튼 (가운데 정렬) */}
+<div className="mt-6 flex justify-center">
+  <div className="grid w-full max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
+    <a
+      href="/oakvalley-ski-lesson"
+      className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold border hover:bg-accent text-center"
+    >
+      오크밸리 스키 강습 안내
+    </a>
+    <a
+      href="/oakvalley-board-lesson"
+      className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold border hover:bg-accent text-center"
+    >
+      오크밸리 보드 강습 안내
+    </a>
+  </div>
+</div>
 
       {/* Instructors */}
       <Section
