@@ -488,23 +488,39 @@ useEffect(() => {
         </div>
       </Section>
 
-{/* ✅ SEO 안내 페이지 버튼 (가운데 정렬) */}
+{/* ✅ SEO 안내 페이지 버튼 (스키/보드 컬러 분리) */}
 <div className="mt-6 flex justify-center">
   <div className="grid w-full max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
+    {/* 스키 */}
     <a
       href="/oakvalley-ski-lesson"
-      className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold border hover:bg-accent text-center"
+      className="
+        inline-flex items-center justify-center
+        rounded-2xl px-5 py-3 text-sm font-extrabold
+        text-white text-center
+        bg-blue-600 hover:bg-blue-700
+        transition
+      "
     >
-      오크밸리 스키 강습 안내
+      ⛷️ 오크밸리 스키 강습 안내
     </a>
+
+    {/* 보드 */}
     <a
       href="/oakvalley-board-lesson"
-      className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold border hover:bg-accent text-center"
+      className="
+        inline-flex items-center justify-center
+        rounded-2xl px-5 py-3 text-sm font-extrabold
+        text-white text-center
+        bg-zinc-900 hover:bg-zinc-800
+        transition
+      "
     >
-      오크밸리 보드 강습 안내
+      🏂 오크밸리 보드 강습 안내
     </a>
   </div>
 </div>
+
 
       {/* Instructors */}
       <Section
