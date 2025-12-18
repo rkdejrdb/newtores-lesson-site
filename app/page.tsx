@@ -487,6 +487,10 @@ useEffect(() => {
           ))}
         </div>
       </Section>
+      
+<a href="/oakvalley-ski-lesson" className="underline text-sm text-muted-foreground">
+  오크밸리 스키 강습 안내 페이지 보기
+</a>
 
       {/* Instructors */}
       <Section
